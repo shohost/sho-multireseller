@@ -1,6 +1,6 @@
 # Sho MultiReseller
 
-Sho MultiReseller is a WHMreseller alternative and an alpha/master reseller plugin for cPanel/WHM. It adds Super Alpha, Alpha and Master reseller tiers on one WHM server, with pooled disk, bandwidth and account limits. Deasoft is discontinuing WHMreseller on 1 December 2026 ([Deasoft notice](https://deasoft.com/whmreseller.php)).
+Sho MultiReseller is an alpha/master reseller plugin for cPanel/WHM. It adds Super Alpha, Alpha and Master reseller tiers on one WHM server, with pooled disk, bandwidth and account limits.
 
 This repository holds documentation only. The plugin is commercial software, licensed by ShoHost. It is not a hosting plan, and it is not made or endorsed by cPanel.
 
@@ -15,7 +15,7 @@ Verified on the [product page](https://shohost.com/sho-multireseller):
 - Package editor extension so a WHM package can carry a default tier, limits and ACL
 - Watchdog automation for auto-suspend, package sync, usage rebuild and quota notification emails on a schedule
 - Account scanner and hierarchy repair when accounts are created or moved outside the plugin UI
-- Legacy marker import for an existing WHMreseller tree, plus hook cutover and registry reconcile
+- Legacy marker import for an existing multi-reseller tree, plus hook cutover and registry reconcile
 - Remote reseller transfer into the correct parent pool, with parent quotas checked before each pull
 - Subtree backups of a reseller's accounts, with a choice of pool on restore
 - Live server load (CPU/RAM) plus rolled-up disk and bandwidth
@@ -65,15 +65,13 @@ Order or start from the [ShoHost license store](https://license.shohost.com/inde
 
 Sho MultiReseller works through WHMCS's standard cPanel/WHM module. It does not ship a separate WHMCS module.
 
-Set the tier (WHM Reseller, Master, Alpha or Super Alpha) under Sho MultiReseller Privileges on a WHM package. When WHMCS creates an account on that package, the account gets that tier, and WHMCS reseller setup is picked up too. WHM packages already set up for WHMreseller keep working after the import.
+Set the tier (WHM Reseller, Master, Alpha or Super Alpha) under Sho MultiReseller Privileges on a WHM package. When WHMCS creates an account on that package, the account gets that tier, and WHMCS reseller setup is picked up too.
 
 If you sell through WHMCS, run one test order end to end during the trial.
 
-## Migrating from WHMreseller
+## Moving an existing reseller tree
 
-You can move an existing WHMreseller tree onto Sho MultiReseller on the same WHM server: install (a 15-day free trial is available), import the legacy multi-reseller markers, then use the account scanner, hook cutover and registry reconcile. Plan a short maintenance window after large moves while usage rebuilds, and back up first.
-
-Step-by-step runbook: [How to migrate from WHMreseller to Sho MultiReseller](https://blog.shohost.com/migrate-whmreseller-to-sho-multireseller/).
+You can move an existing multi-reseller tree onto Sho MultiReseller on the same WHM server: install (a 15-day free trial is available), import the legacy multi-reseller markers, then use the account scanner, hook cutover and registry reconcile. Plan a short maintenance window after large moves while usage rebuilds, and back up first.
 
 ## Version
 
@@ -91,15 +89,14 @@ Version, release date and release note: [https://files.shodns.in/sho-multiresell
 
 - Product page: [https://shohost.com/sho-multireseller](https://shohost.com/sho-multireseller)
 - Store: [https://license.shohost.com/index.php?rp=/store/sho-multireseller](https://license.shohost.com/index.php?rp=/store/sho-multireseller)
-- Blog pillar: [WHMreseller alternative: Super Alpha, Alpha and Master resellers in WHM](https://blog.shohost.com/whmreseller-alternative-sho-multireseller/)
-- Migration guide: [Migrate from WHMreseller to Sho MultiReseller](https://blog.shohost.com/migrate-whmreseller-to-sho-multireseller/)
+- Guide: [Alpha vs Master vs Super Alpha reseller](https://blog.shohost.com/alpha-vs-master-vs-super-alpha-reseller/)
 - Current version: [version.json](https://files.shodns.in/sho-multireseller/version.json)
 
 ## FAQ
 
-### What is the best WHMreseller alternative?
+### What is an alpha reseller plugin for cPanel/WHM?
 
-Sho MultiReseller is a commercial WHMreseller alternative for cPanel/WHM. It adds Super Alpha, Alpha and Master reseller tiers on one WHM server, with pooled disk, bandwidth and account limits, and it can import an existing WHMreseller tree. Other plugins you can still buy for cPanel/WHM include Zamfoo, WHMAMP and OrbisReseller; see the [comparison guide](https://blog.shohost.com/whmreseller-alternative-sho-multireseller/).
+WHM on its own has one reseller layer. An alpha reseller plugin such as Sho MultiReseller adds Super Alpha, Alpha and Master tiers above it on the same WHM server, with pooled disk, bandwidth and account limits for each branch. See [Alpha vs Master vs Super Alpha reseller](https://blog.shohost.com/alpha-vs-master-vs-super-alpha-reseller/).
 
 ### How do I create an alpha reseller in WHM?
 
